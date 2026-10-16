@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ismael Espinoza Jaramillo · Robot Learning</title>
+<meta name="description" content="Ismael Espinoza Jaramillo, Ph.D. candidate at Kyung Hee University. Sim-to-real reinforcement and imitation learning for bimanual dexterous manipulation on real robots.">
+<meta name="author" content="Ismael Espinoza Jaramillo">
+<link rel="canonical" href="https://ismael-esp.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ismael-esp.github.io/">
+<meta property="og:title" content="Ismael Espinoza Jaramillo · Robot Learning">
+<meta property="og:description" content="Sim-to-real reinforcement and imitation learning for two-arm, two-hand robots: policies trained in a digital twin and run on the real robot.">
+<meta property="og:image" content="https://ismael-esp.github.io/assets/media/real_sweeping_h4.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231e3a5f'/%3E%3Ctext x='16' y='21.5' font-family='Arial,sans-serif' font-size='14' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EIE%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20261016c">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Top bar -->
+<header class="topbar" id="topbar">
+  <div class="wrap topbar-inner">
+    <a href="#top" class="brand">Ismael Espinoza Jaramillo</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Sections">
+      <a href="#robot">On the robot</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Code</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <!-- CV: add back once the new resume PDF replaces assets/Espinoza_Ismael_CV.pdf
+      <a href="assets/Espinoza_Ismael_CV.pdf" class="nav-cv">CV</a> -->
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Intro -->
+  <section class="intro wrap" id="top">
+    <div class="intro-text">
+      <h1>Ismael Espinoza Jaramillo</h1>
+      <p class="role">Ph.D. candidate in robot learning, Kyung Hee University · degree expected February 2027</p>
+      <p class="statement">I train dexterous two-arm, two-hand robot policies in simulation and run them on real robots.</p>
+      <p>My dissertation builds a <strong>Real2Sim2Real system</strong> for long-horizon bimanual manipulation:
+      teleoperated demonstrations, a digital twin calibrated against the hardware, a temporal-context transformer
+      policy trained with imitation and reinforcement learning, and two ways back to the real robot, one with a
+      6D object pose estimator and one with an RGB-only student distilled from the policy. The 44-DoF policies
+      run on a table-mounted and an upper-humanoid robot with no training on real-robot data.
+      Advisor: Prof. Tae-Seong Kim, Kyung Hee University.</p>
+      <p>Before the Ph.D. I worked in industrial automation in Ecuador (PLCs, LiDAR navigation). I am looking for
+      research scientist and research engineer roles in robot learning, in Korea or abroad.</p>
+      <ul class="links" aria-label="Links">
+        <li><a href="mailto:inespinozarir10@gmail.com">Email</a></li>
+        <li><a href="mailto:inespinoza24@khu.ac.kr">Lab email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=3S9BoVAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+        <li><a href="https://github.com/ismael-esp" target="_blank" rel="noopener">GitHub</a></li>
+        <!-- LinkedIn: add an <li> here with the profile URL once it exists.
+             CV: add an <li> linking assets/Espinoza_Ismael_CV.pdf once the new resume is compiled. -->
+      </ul>
+    </div>
+    <figure class="intro-photo">
+      <img src="assets/media/profile.jpg" alt="Portrait of Ismael Espinoza Jaramillo" width="640" height="640">
+    </figure>
+  </section>
+
+  <!-- On the real robot -->
+  <section class="section wrap" id="robot">
+    <div class="section-head">
+      <h2>On the real robot</h2>
+      <p class="section-sub">Each policy was trained only in the digital twin and run on the robot without real-robot training data.</p>
+    </div>
+    <div class="reel">
+      <figure class="clip">
+        <video class="autoplay" controls muted loop playsinline preload="none" poster="assets/media/real_sweeping_h4.jpg" aria-label="Real robot sweeping debris into a dustpan with a brush held in one hand and the dustpan in the other">
+          <source src="assets/media/real_sweeping_h4.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <span class="clip-title">Bimanual Sweeping</span>
+          <span class="clip-meta"><span class="tag tag-real">Real robot</span> Direct transfer · 30/35 successes · 2× speed</span>
+        </figcaption>
+      </figure>
+      <figure class="clip">
+        <video class="autoplay" controls muted loop playsinline preload="none" poster="assets/media/real_cup_handover_h3.jpg" aria-label="Real robot flipping a cup, handing it from one hand to the other and placing it on a tray">
+          <source src="assets/media/real_cup_handover_h3.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <span class="clip-title">Cup Handover</span>
+          <span class="clip-meta"><span class="tag tag-real">Real robot</span> Direct transfer · 29/35 successes · 3× speed</span>
+        </figcaption>
+      </figure>
+      <figure class="clip">
+        <video class="autoplay" controls muted loop playsinline preload="none" poster="assets/media/real_tube_handover_v2.jpg" aria-label="Real robot picking up a tube with one hand and handing it to the other hand">
+          <source src="assets/media/real_tube_handover_v2.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <span class="clip-title">Tube Handover, RGB only</span>
+          <span class="clip-meta"><span class="tag tag-real">Real robot</span> Distilled student · 84.0% success · 1.5× speed</span>
+        </figcaption>
+      </figure>
+      <figure class="clip">
+        <video class="autoplay" controls muted loop playsinline preload="none" poster="assets/media/real_pick_place_v1.jpg" aria-label="Real robot placing two cans into a box, one with each hand">
+          <source src="assets/media/real_pick_place_v1.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <span class="clip-title">Bimanual Pick and Place, RGB only</span>
+          <span class="clip-meta"><span class="tag tag-real">Real robot</span> Distilled student · 72.0% success · real time</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section class="section wrap" id="news">
+    <div class="section-head"><h2>News</h2></div>
+    <ul class="news">
+      <li><span class="news-date">Oct 2026</span><span>Submitted my Ph.D. dissertation, <em>A Real2Sim2Real System for Bimanual Long-Horizon Dexterous Manipulation via Temporal-Context Transformer Reinforcement Learning</em>.</span></li>
+      <li><span class="news-date">Oct 2026</span><span>Released six repositories on <a href="https://github.com/ismael-esp" target="_blank" rel="noopener">GitHub</a>: ROS&nbsp;2 drivers, glove retargeting, Quest&nbsp;3 teleoperation, 6D tracking, dexterous grasping, and FoldingACT.</span></li>
+      <li><span class="news-date">2026</span><span>Papers at <strong>ICRA 2026</strong> (Vienna) and <strong>UR 2026</strong> (Osaka, in press).</span></li>
+      <li><span class="news-date">Mar 2026</span><span>First-author paper at <strong>HRI 2026</strong> (Companion), Edinburgh.</span></li>
+      <li><span class="news-date">Mar 2026</span><span>Korean Patent 10-2943203 granted for the TC-TRL dual-arm system.</span></li>
+      <li><span class="news-date">Oct 2025</span><span>TC-TRL (IEEE RA-L) presented as a poster at <strong>IROS 2025</strong>, Hangzhou.</span></li>
+    </ul>
+  </section>
+
+  <!-- Research -->
+  <section class="section wrap" id="research">
+    <div class="section-head">
+      <h2>Research</h2>
+      <p class="section-sub">Dissertation: <em>A Real2Sim2Real System for Bimanual Long-Horizon Dexterous Manipulation via Temporal-Context Transformer Reinforcement Learning</em> (Kyung Hee University, submitted October 2026).</p>
+    </div>
+
+    <figure class="figure wide">
+      <img src="assets/media/fig_system_loop.webp" alt="Diagram of the Real2Sim2Real loop: physical robot and operator in the real world; digital twin, policy with demonstrations, training in parallel twins, and two transfer paths back to the robot" loading="lazy" data-lightbox width="2000" height="812">
+      <figcaption>The Real2Sim2Real loop, closed on two robot configurations: build the digital twin from the real robot, seed the policy with teleoperated demonstrations, train it in parallel twins, then return to the robot by direct or distilled transfer. Click to enlarge.</figcaption>
+    </figure>
+
+    <!-- 1. Digital twin -->
+    <article class="row">
+      <div class="row-media">
+        <figure class="figure">
+          <img src="assets/media/fig_configurations.webp" alt="Table-mounted and upper-humanoid robot configurations shown beside their digital twins" loading="lazy" data-lightbox width="1400" height="1087">
+          <figcaption>Table-mounted (top) and upper-humanoid (bottom) configurations beside their digital twins.</figcaption>
+        </figure>
+      </div>
+      <div class="row-text">
+        <p class="kicker">1 · Real2Sim</p>
+        <h3>A digital twin built from the real robot</h3>
+        <p>The robot has a UR3e and a UR3 arm, each with a 16-DoF Allegro Hand V4: 44 joints controlled by one
+        policy. Its digital twin uses the robot description, object meshes scanned with a phone and cleaned into
+        collision geometry, and drive gains calibrated against motion recorded on the hardware. The same system
+        was built for two configurations: table-mounted and upper-humanoid.</p>
+        <p class="more"><a href="assets/media/fig_reconstruction.webp" data-lightbox-link>Object reconstruction figure</a></p>
+      </div>
+    </article>
+
+    <!-- 2. Demonstrations -->
+    <article class="row reverse">
+      <div class="row-media">
+        <figure class="figure">
+          <video class="autoplay" controls muted loop playsinline preload="none" poster="assets/media/real_teleop_glove.jpg" aria-label="Operator wearing a data glove teleoperating the real robot hand, which flips a cup">
+            <source src="assets/media/real_teleop_glove.mp4" type="video/mp4">
+          </video>
+          <figcaption><span class="tag tag-real">Real robot</span> The glove interface driving the real robot · 2× speed. The training demonstrations are recorded in the digital twin.</figcaption>
+        </figure>
+      </div>
+      <div class="row-text">
+        <p class="kicker">2 · Demonstrations</p>
+        <h3>Thirty teleoperated demonstrations become three hundred</h3>
+        <p>Demonstrations are recorded inside the digital twin. The operator wears two Manus gloves and three VIVE
+        trackers; a learned retargeting network (GeoRT) maps the fingertips to the Allegro joints, and the wrist
+        poses drive the arms through inverse kinematics. The thirty demonstrations per task are split into subtask
+        segments, recombined into new episodes and replayed in the twin. Only physically valid episodes are kept,
+        giving 300 per task.</p>
+        <p class="more"><a href="assets/media/fig_teleop.webp" data-lightbox-link>Teleoperation pipeline</a> · <a href="assets/media/fig_retargeting.webp" data-lightbox-link>Finger retargeting</a> · <a href="assets/media/fig_stitching.webp" data-lightbox-link>Demonstration stitching</a></p>
+      </div>
+    </article>
+
+    <!-- 3. Policy -->
+    <article class="block">
+      <p class="kicker">3 · Policy</p>
+      <h3>TC-TRL: two arms, one memory</h3>
+      <figure class="figure wide-media">
+        <video class="autoplay native" controls muted loop playsinline preload="none" poster="assets/media/anim_tc_trl.jpg" aria-label="Animation of the TC-TRL policy: it remembers the last seconds, decides the right arm's action, then the left arm's action given the right">
+          <source src="assets/media/anim_tc_trl.mp4" type="video/mp4">
+        </video>
+        <figcaption>TC-TRL in 30 seconds: remember, decide for the right arm, then the left arm knowing the right.</figcaption>
+      </figure>
+      <div class="block-text">
+        <p>Each arm with its hand is an agent. A temporal-context encoder attends over a window of recent
+        observations and actions, so the policy knows which step of a long task is under way; an arm-conditioned
+        decoder chooses the left arm's action knowing the right arm's. The policy is pretrained by behavior
+        cloning on the demonstrations, then fine-tuned with PPO in parallel copies of the twin with domain
+        randomization (upper-humanoid configuration: 300 demonstrations, 500 environments, about ten hours per
+        task on one RTX 5070 Ti).</p>
+        <p class="result"><span class="tag tag-sim">Simulation</span> On the five long-horizon benchmark tasks of the
+        table-mounted configuration (Isaac Gym twin), 89.9% mean success, against 59.0% for the best transformer
+        baseline and 26.6% for the best PPO baseline.</p>
+        <p class="more">IEEE RA-L 2024 (co-first author) · Korean Patent 10-2943203 · <a href="assets/media/fig_tc_trl.webp" data-lightbox-link>Architecture</a></p>
+      </div>
+    </article>
+
+    <!-- 4. Direct transfer -->
+    <article class="block" id="direct">
+      <p class="kicker">4a · Direct transfer</p>
+      <h3>The same policy, unchanged, on the real robot</h3>
+      <p class="block-lead">A ROS&nbsp;2 bridge runs the trained policy at 10&nbsp;Hz. An RGB-D camera in front of the
+      robot and a 6D pose pipeline (detection, segmentation, FoundationPose) supply the object poses the policy saw
+      in the twin, and the 44 joint targets are smoothed and clamped before they reach the drivers.</p>
+      <div class="pair">
+        <figure class="figure">
+          <video class="autoplay" controls muted loop playsinline preload="none" poster="assets/media/twin_cup_handover_h3.jpg" aria-label="Cup Handover in the digital twin">
+            <source src="assets/media/twin_cup_handover_h3.mp4" type="video/mp4">
+          </video>
+          <figcaption><span class="tag tag-sim">Digital twin</span> Cup Handover · 3× speed</figcaption>
+        </figure>
+        <figure class="figure">
+          <video class="autoplay" controls muted loop playsinline preload="none" poster="assets/media/real_cup_handover_h3.jpg" aria-label="Cup Handover on the real robot">
+            <source src="assets/media/real_cup_handover_h3.mp4" type="video/mp4">
+          </video>
+          <figcaption><span class="tag tag-real">Real robot</span> Cup Handover · 3× speed</figcaption>
+        </figure>
+      </div>
+      <div class="table-wrap">
+        <table class="results">
+          <caption>Direct transfer: success on the real robot (35 trials per task)</caption>
+          <thead>
+            <tr><th scope="col">Task</th><th scope="col" class="hide-sm">Configuration</th><th scope="col" class="num">Digital twin, TC-TRL</th><th scope="col" class="num">Real robot, TC-TRL</th><th scope="col" class="num">Real robot, imitation only</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Tube Handover (H1)</th><td class="hide-sm">table-mounted</td><td class="num">82.9%</td><td class="num"><strong>27/35</strong><span class="pct">77.1%</span></td><td class="num">4/35<span class="pct">11.4%</span></td></tr>
+            <tr><th scope="row">Cup Handover, flip and place (H2)</th><td class="hide-sm">table-mounted</td><td class="num">57.1%</td><td class="num"><strong>18/35</strong><span class="pct">51.4%</span></td><td class="num">2/35<span class="pct">5.7%</span></td></tr>
+            <tr><th scope="row">Cup Handover (H3)</th><td class="hide-sm">upper-humanoid</td><td class="num">93.8%</td><td class="num"><strong>29/35</strong><span class="pct">82.9%</span></td><td class="num">13/35<span class="pct">37.1%</span></td></tr>
+            <tr><th scope="row">Bimanual Sweeping (H4)</th><td class="hide-sm">upper-humanoid</td><td class="num">90.9%</td><td class="num"><strong>30/35</strong><span class="pct">85.7%</span></td><td class="num">7/35<span class="pct">20.0%</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">TC-TRL loses 5 to 11 points from the twin to the real robot; the same architecture trained by imitation alone reaches at most 37.1%. Source: dissertation, Chapter 4. <a href="assets/media/fig_pose_estimation.webp" data-lightbox-link>Pose estimation figure</a> · <a href="assets/media/fig_transfer_paths.webp" data-lightbox-link>The two transfer paths</a></p>
+      <div class="pair">
+        <figure class="figure">
+          <video class="autoplay" controls muted loop playsinline preload="none" poster="assets/media/real_tube_handover_h1.jpg" aria-label="Table-mounted robot passing a tube between its hands and to a person">
+            <source src="assets/media/real_tube_handover_h1.mp4" type="video/mp4">
+          </video>
+          <figcaption><span class="tag tag-real">Real robot</span> Tube Handover (H1), table-mounted · 1.5× speed</figcaption>
+        </figure>
+        <figure class="figure">
+          <video class="autoplay" controls muted loop playsinline preload="none" poster="assets/media/real_cup_flip_h2.jpg" aria-label="Table-mounted robot flipping a cup and placing it on a tray">
+            <source src="assets/media/real_cup_flip_h2.mp4" type="video/mp4">
+          </video>
+          <figcaption><span class="tag tag-real">Real robot</span> Cup Handover, flip and place (H2), table-mounted · 1.5× speed</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- 5. Distilled transfer -->
+    <article class="block" id="distilled">
+      <p class="kicker">4b · Distilled transfer (TMAD)</p>
+      <h3>Dropping the pose estimator: a student that acts from two RGB cameras</h3>
+      <p class="block-lead">The trained policy stays in the twin as a frozen teacher. A student that sees only two
+      RGB images and the robot's proprioception is distilled from it online, in the states the student itself
+      reaches, with randomized rendering. On the robot the student runs at 30&nbsp;Hz with no pose estimator, no
+      object model and no extrinsic camera calibration.</p>
+      <figure class="figure wide">
+        <img src="assets/media/fig_tmad.webp" alt="TMAD overview: a frozen teacher in the digital twin, online distillation of a student from rendered and randomized images, and deployment of the student on the robot" loading="lazy" data-lightbox width="2000" height="865">
+        <figcaption>TMAD: teacher in the twin, online distillation, deployment of the student only.</figcaption>
+      </figure>
+      <div class="split">
+        <figure class="figure">
+          <video class="autoplay" controls muted loop playsinline preload="none" poster="assets/media/real_pouring_v3.jpg" aria-label="Real robot pouring from a bottle into a cup held by the other hand">
+            <source src="assets/media/real_pouring_v3.mp4" type="video/mp4">
+          </video>
+          <figcaption><span class="tag tag-real">Real robot</span> Pouring Water, RGB only · 2× speed</figcaption>
+        </figure>
+        <div class="table-wrap">
+          <table class="results">
+            <caption>Distilled transfer: success on the real robot, upper-humanoid (mean of 3 runs × 25 trials)</caption>
+            <thead>
+              <tr><th scope="col">Task</th><th scope="col" class="num">RGB student (TMAD)</th><th scope="col" class="num">Single-agent student</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Bimanual Pick and Place</th><td class="num"><strong>72.0%</strong></td><td class="num">28.0%</td></tr>
+              <tr><th scope="row">Tube Handover</th><td class="num"><strong>84.0%</strong></td><td class="num">24.0%</td></tr>
+              <tr><th scope="row">Pouring Water</th><td class="num"><strong>78.1%</strong></td><td class="num">34.2%</td></tr>
+              <tr><th scope="row">Bimanual Sweeping</th><td class="num"><strong>81.2%</strong></td><td class="num">75.9%</td></tr>
+            </tbody>
+          </table>
+          <p class="note">Source: dissertation, Chapter 5. The single-agent student (DextrAH-RGB style) has the same encoder and training but no temporal multi-agent core. The TMAD paper under review (second author) reports the first two tasks.</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Code -->
+  <section class="section wrap" id="projects">
+    <div class="section-head">
+      <h2>Code</h2>
+      <p class="section-sub">Public repositories on GitHub. Results are as reported in each repository's README.</p>
+    </div>
+    <div class="repos">
+      <article class="repo">
+        <h3><a href="https://github.com/ismael-esp/dexterous-pick-and-place" target="_blank" rel="noopener">dexterous-pick-and-place</a></h3>
+        <p>FoundationPose perception and force-closure grasp synthesis (BODex on cuRobo) driving an Allegro Hand
+        on a UR3, in Isaac Lab and on the real robot.</p>
+        <p class="repo-result"><span class="tag tag-real">Real robot</span> 94 of 100 executed trials succeeded across 10 objects.
+        <span class="tag tag-sim">Simulation</span> 180 of 200 episodes, both arms.</p>
+        <p class="repo-tags">Python · Isaac Lab · cuRobo · FoundationPose</p>
+      </article>
+      <article class="repo">
+        <h3><a href="https://github.com/ismael-esp/dual-arm-allegro-ros2" target="_blank" rel="noopener">dual-arm-allegro-ros2</a></h3>
+        <p>ROS&nbsp;2 Jazzy drivers for the bimanual torso: UR3 and UR3e arms, two Allegro Hand V4 over CAN, three
+        RealSense D415 cameras, URDF of the stand and table, and bridges that take plain joint-position topics.</p>
+        <p class="repo-result">44 joints in one <code>/joint_states</code> at 100&nbsp;Hz; the configuration the lab's robot runs daily.</p>
+        <p class="repo-tags">C++ · ROS 2 · ros2_control · Docker</p>
+      </article>
+      <article class="repo">
+        <h3><a href="https://github.com/ismael-esp/allegro-hand-retargeting" target="_blank" rel="noopener">allegro-hand-retargeting</a></h3>
+        <p>Real-time Manus glove to Allegro Hand retargeting for both hands, with a learned geometric model
+        (GeoRT, trained without paired data) and a rule-based baseline, streamed to the hands through a
+        60&nbsp;Hz ROS&nbsp;2 bridge.</p>
+        <p class="repo-result">About 0.7&nbsp;ms per hand per forward pass on an RTX 5070 Ti.</p>
+        <p class="repo-tags">C++ · Python · PyTorch · ROS 2</p>
+      </article>
+      <article class="repo">
+        <h3><a href="https://github.com/ismael-esp/foundationpose-ros2-tracker" target="_blank" rel="noopener">foundationpose-ros2-tracker</a></h3>
+        <p>Zero-shot 6D object tracking in ROS&nbsp;2 from a mesh and an object name: YOLO-World detects, SAM&nbsp;2
+        segments, FoundationPose registers and tracks, and world-frame poses are published for manipulation.</p>
+        <p class="repo-result">Includes a port of FoundationPose's CUDA extensions to Blackwell GPUs (CUDA 12.8). MIT license.</p>
+        <p class="repo-tags">Python · ROS 2 · CUDA · SAM 2</p>
+      </article>
+      <article class="repo">
+        <h3><a href="https://github.com/ismael-esp/quest3-dexterous-teleop" target="_blank" rel="noopener">quest3-dexterous-teleop</a></h3>
+        <p>Meta Quest&nbsp;3 hand-tracking teleoperation of the dual-arm, two-hand robot in Isaac Lab, with
+        demonstration recording and a converter to a fixed-length imitation-learning dataset.</p>
+        <p class="repo-result"><span class="tag tag-sim">Simulation</span> Teleoperation loop at about 30&nbsp;Hz; 44-D actions.</p>
+        <p class="repo-tags">Python · Isaac Lab · CloudXR · WebXR</p>
+      </article>
+      <article class="repo">
+        <h3><a href="https://github.com/ismael-esp/robotic-origami-challenge" target="_blank" rel="noopener">FoldingACT</a></h3>
+        <p>Vision and touch imitation policy for bimanual paper folding, built for the IROS 2026 Robotic Origami
+        Challenge: an ACT-style action-chunking transformer over four cameras (DINOv3) and ten fingertip tactile
+        pads (Sparsh), predicting 65-D joint targets.</p>
+        <p class="repo-result">Built the data pipeline for the 398&nbsp;GB LeRobot dataset, an Isaac Sim mirror, and the inference service the organizers ran.</p>
+        <p class="repo-tags">Python · PyTorch · LeRobot · Isaac Sim</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section class="section wrap" id="publications">
+    <div class="section-head">
+      <h2>Publications</h2>
+      <p class="section-sub">4 journal articles, 7 international conference papers, 1 granted patent and 2 pending. 153 citations on <a href="https://scholar.google.com/citations?user=3S9BoVAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a> (October 2026).</p>
+    </div>
+
+    <h3 class="subhead">Selected</h3>
+    <div class="pubs">
+      <article class="pub">
+        <img class="pub-thumb" src="assets/media/real_tube_handover_v2.jpg" alt="Robot handing a tube between its hands" loading="lazy" width="960" height="540">
+        <div class="pub-body">
+          <p class="pub-title">TMAD: Temporal Multi-Agent Distillation for Bimanual Long-Horizon Manipulation</p>
+          <p class="pub-authors">S. Park, <b>I. Espinoza</b>, G. Kim, J. Y. Kim, K. Lee, T.&#8209;S. Kim</p>
+          <p class="pub-venue">Under review, 2026</p>
+          <p class="pub-tldr">Distills the state-based bimanual teacher into a stereo-RGB student that needs no 6D pose estimator; on the real robot, 72.0% on Pick-and-Place and 84.0% on Handover.</p>
+          <p class="pub-links"><a href="#distilled">Results</a></p>
+        </div>
+      </article>
+      <article class="pub">
+        <img class="pub-thumb" src="assets/media/real_sweeping_h4.jpg" alt="Upper-humanoid robot sweeping with a brush and a dustpan" loading="lazy" width="960" height="540">
+        <div class="pub-body">
+          <p class="pub-title">A Semi-Humanoid Real2Sim2Real System for Bimanual Long-Horizon Manipulation</p>
+          <p class="pub-authors">Y.&#8209;H. Choi, <b>I. Espinoza</b>, K. Lee, S. Park, J. Y. Kim, J.&#8209;H. Oh, W. H. Lee, T.&#8209;S. Kim</p>
+          <p class="pub-venue">International Conference on Ubiquitous Robots (<b>UR</b>), Osaka, 2026 · in press</p>
+          <p class="pub-tldr">The Real2Sim2Real system on the upper-humanoid configuration: digital twin with real-time object tracking, stitched demonstrations, TC-TRL, and zero-shot transfer of Cup Handover and Bimanual Sweeping.</p>
+          <p class="pub-links"><a href="#direct">Results</a></p>
+        </div>
+      </article>
+      <article class="pub">
+        <img class="pub-thumb" src="assets/media/real_tube_handover_h1.jpg" alt="Table-mounted robot handing a tube to a person" loading="lazy" width="960" height="540">
+        <div class="pub-body">
+          <p class="pub-title">A Real2Sim2Real Transformer Policy System for Bimanual R2R2H Tasks</p>
+          <p class="pub-authors"><b>I. Espinoza</b>, Y.&#8209;H. Choi, K. Lee, J.&#8209;H. Oh, K. J. Pahk, T.&#8209;S. Kim</p>
+          <p class="pub-venue">ACM/IEEE <b>HRI</b> 2026 Companion, Edinburgh, pp. 716–720</p>
+          <p class="pub-tldr">Glove-and-tracker teleoperation, a calibrated twin and a transformer policy for robot-to-robot-to-human handover.</p>
+          <p class="pub-links"><a href="https://doi.org/10.1145/3776734.3794489" target="_blank" rel="noopener">Paper</a> · <a href="#direct">Results</a></p>
+        </div>
+      </article>
+      <article class="pub">
+        <img class="pub-thumb" src="assets/media/pub_ral.jpg" alt="Five long-horizon bimanual tasks in simulation" loading="lazy" width="480" height="435">
+        <div class="pub-body">
+          <p class="pub-title">Bimanual Long-Horizon Manipulation via Temporal-Context Transformer RL</p>
+          <p class="pub-authors">J.&#8209;H. Oh*, <b>I. Espinoza Jaramillo*</b>, D. Jung, T.&#8209;S. Kim &nbsp;<span class="eq">*equal contribution</span></p>
+          <p class="pub-venue"><b>IEEE Robotics and Automation Letters</b>, 9(12), 2024 · presented at IROS 2025</p>
+          <p class="pub-tldr">TC-TRL: a temporal-context multi-agent transformer pretrained by behavior cloning and fine-tuned with PPO for two-arm, two-hand long-horizon tasks.</p>
+          <p class="pub-links"><a href="https://doi.org/10.1109/LRA.2024.3484167" target="_blank" rel="noopener">Paper</a></p>
+        </div>
+      </article>
+      <article class="pub">
+        <img class="pub-thumb" src="assets/media/pub_icra.jpg" alt="Planner architecture combining language, vision and memory" loading="lazy" width="480" height="340">
+        <div class="pub-body">
+          <p class="pub-title">Multi-modal Affordance Planner with Temporal-Context Action Policy for Long-Horizon Bimanual Robot Manipulation</p>
+          <p class="pub-authors">J.&#8209;H. Oh, D. Jung, <b>I. Espinoza</b>, Y.&#8209;H. Choi, Y. Kim, D. Shin, J. Moon, W. Kim, T.&#8209;S. Kim</p>
+          <p class="pub-venue"><b>IEEE ICRA</b> 2026, Vienna, pp. 637–644</p>
+          <p class="pub-tldr">A retrieval-augmented LLM planner generates plans, demonstrations and rewards for a temporal-context action policy.</p>
+          <p class="pub-links"><a href="https://doi.org/10.1109/ICRA57385.2026.11695814" target="_blank" rel="noopener">Paper</a></p>
+        </div>
+      </article>
+      <article class="pub">
+        <img class="pub-thumb" src="assets/media/pub_sensors.jpg" alt="System overview: wearable exoskeleton sensors, data preprocessing, deep learning models and hardware platforms" loading="lazy" width="480" height="247">
+        <div class="pub-body">
+          <p class="pub-title">Real-time Human Activity Recognition with IMU and Encoder Sensors in Wearable Exoskeleton Robot via Deep Learning Networks</p>
+          <p class="pub-authors"><b>I. Espinoza Jaramillo</b>, J. G. Jeong, P. Rivera Lopez, C.&#8209;H. Lee, D.&#8209;Y. Kang, T.&#8209;J. Ha, J.&#8209;H. Oh, H. Jung, J. H. Lee, W. H. Lee, T.&#8209;S. Kim</p>
+          <p class="pub-venue"><b>Sensors</b>, 22(24), 9690, 2022</p>
+          <p class="pub-tldr">My first line of research: deep networks for real-time activity recognition from exoskeleton sensors, running on an embedded board.</p>
+          <p class="pub-links"><a href="https://doi.org/10.3390/s22249690" target="_blank" rel="noopener">Paper</a></p>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="subhead">Patents</h3>
+    <ul class="biblio">
+      <li>T.&#8209;S. Kim, <b>I. Espinoza Jaramillo</b>, J.&#8209;H. Oh. System and method for long-horizon task execution of a dual-arm robot using temporal-context transformer network-based reinforcement learning. Korean Patent 10-2943203, filed November 26, 2024, <b>granted March 19, 2026</b>.</li>
+      <li>T.&#8209;S. Kim, S.&#8209;H. Park, G.&#8209;B. Kim, <b>I. Espinoza Jaramillo</b>. Vision-based learning method for long-horizon bimanual robot manipulation via temporal multi-agent distillation, and robot system using the same. Korean patent pending (application filed; invention disclosed August 2026).</li>
+      <li>J.&#8209;H. Oh, <b>I. Espinoza Jaramillo</b>, T.&#8209;S. Kim. Transformer reinforcement learning system with temporal context planning for bimanual long-horizon tasks. Korean patent pending (application filed; invention disclosed June 2025).</li>
+    </ul>
+    <p class="note">Assignee: Kyung Hee University Industry-Academic Cooperation Foundation.</p>
+
+    <details class="all-pubs">
+      <summary>Full publication list</summary>
+
+      <h4>Journal articles</h4>
+      <ul class="biblio">
+        <li>J.&#8209;H. Oh*, <b>I. Espinoza Jaramillo*</b>, D. Jung, T.&#8209;S. Kim. Bimanual long-horizon manipulation via temporal-context transformer RL. <i>IEEE Robotics and Automation Letters</i>, 9(12), 10898–10905, 2024. <a href="https://doi.org/10.1109/LRA.2024.3484167" target="_blank" rel="noopener">doi</a> <span class="eq">*equal contribution</span></li>
+        <li><b>I. Espinoza Jaramillo</b>, C. Chola, J.&#8209;G. Jeong, J.&#8209;H. Oh, H. Jung, J.&#8209;H. Lee, W. H. Lee, T.&#8209;S. Kim. Human activity prediction based on forecasted IMU activity signals by sequence-to-sequence deep neural networks. <i>Sensors</i>, 23(14), 6491, 2023. <a href="https://doi.org/10.3390/s23146491" target="_blank" rel="noopener">doi</a></li>
+        <li>P. Rivera Lopez, J.&#8209;H. Oh, J. G. Jeong, H. Jung, J. H. Lee, <b>I. Espinoza Jaramillo</b>, C. Chola, W. H. Lee, T.&#8209;S. Kim. Dexterous object manipulation with an anthropomorphic robot hand via natural hand pose transformer and deep reinforcement learning. <i>Applied Sciences</i>, 13(1), 379, 2023. <a href="https://doi.org/10.3390/app13010379" target="_blank" rel="noopener">doi</a></li>
+        <li><b>I. Espinoza Jaramillo</b>, J. G. Jeong, P. Rivera Lopez, C.&#8209;H. Lee, D.&#8209;Y. Kang, T.&#8209;J. Ha, J.&#8209;H. Oh, H. Jung, J. H. Lee, W. H. Lee, T.&#8209;S. Kim. Real-time human activity recognition with IMU and encoder sensors in wearable exoskeleton robot via deep learning networks. <i>Sensors</i>, 22(24), 9690, 2022. <a href="https://doi.org/10.3390/s22249690" target="_blank" rel="noopener">doi</a></li>
+      </ul>
+
+      <h4>International conference papers</h4>
+      <ul class="biblio">
+        <li>J.&#8209;H. Oh, D. Jung, <b>I. Espinoza</b>, Y.&#8209;H. Choi, Y. Kim, D. Shin, J. Moon, W. Kim, T.&#8209;S. Kim. Multi-modal affordance planner with temporal-context action policy for long-horizon bimanual robot manipulation. <i>IEEE ICRA</i>, Vienna, 637–644, 2026. <a href="https://doi.org/10.1109/ICRA57385.2026.11695814" target="_blank" rel="noopener">doi</a></li>
+        <li><b>I. Espinoza</b>, Y.&#8209;H. Choi, K. Lee, J.&#8209;H. Oh, K. J. Pahk, T.&#8209;S. Kim. A Real2Sim2Real transformer policy system for bimanual R2R2H tasks. <i>Companion Proceedings of ACM/IEEE HRI</i>, Edinburgh, 716–720, 2026. <a href="https://doi.org/10.1145/3776734.3794489" target="_blank" rel="noopener">doi</a></li>
+        <li>Y.&#8209;H. Choi, <b>I. Espinoza</b>, K. Lee, S. Park, J. Y. Kim, J.&#8209;H. Oh, W. H. Lee, T.&#8209;S. Kim. A semi-humanoid Real2Sim2Real system for bimanual long-horizon manipulation. <i>International Conference on Ubiquitous Robots (UR)</i>, Osaka, 2026, in press.</li>
+        <li>J.&#8209;H. Oh*, <b>I. Espinoza Jaramillo*</b>, D. Jung, Y.&#8209;H. Choi, K. J. Pahk, W. H. Lee, W. Kim, T.&#8209;S. Kim. Bimanual long-horizon lifecare robotics with temporal context LLM planner and transformer RL. <i>IEEE EMBC</i>, Copenhagen, 2025. <a href="https://doi.org/10.1109/EMBC58623.2025.11252910" target="_blank" rel="noopener">doi</a> <span class="eq">*equal contribution</span></li>
+        <li>J. H. Lee, J.&#8209;H. Oh, <b>I. Espinoza</b>, D. Jung, Y.&#8209;H. Choi, W. H. Lee, W. Kim, T.&#8209;S. Kim. Counterfactual multi-agent reinforcement learning for long-horizon medical assistive tasks with dual-arm robot. <i>IEEE EMBC</i>, Copenhagen, 2025. <a href="https://doi.org/10.1109/EMBC58623.2025.11253568" target="_blank" rel="noopener">doi</a></li>
+        <li>H. Jung, J.&#8209;H. Oh, <b>I. Espinoza Jaramillo</b>, D. Jung, W. H. Lee, T.&#8209;S. Kim. Multi-agent AMIX-DAPG of dual-arm robot for long horizon lifecare tasks. <i>ICAIIC</i>, Fukuoka, 866–870, 2025. <a href="https://doi.org/10.1109/ICAIIC64266.2025.10920798" target="_blank" rel="noopener">doi</a></li>
+        <li>J. G. Jeong, J.&#8209;H. Oh, H. Jung, J. H. Lee, <b>I. Espinoza Jaramillo</b>, C. Chola, W. H. Lee, T.&#8209;S. Kim. Long-horizon manipulation by a single-arm robot via sub-goal network based hierarchical reinforcement learning. <i>ICBET</i>, Tokyo, 88–92, 2023. <a href="https://doi.org/10.1145/3620679.3620693" target="_blank" rel="noopener">doi</a></li>
+      </ul>
+
+      <h4>Symposium poster</h4>
+      <ul class="biblio">
+        <li>J.&#8209;H. Oh, <b>I. Espinoza</b>, H. Jung, J. H. Lee, S. Kim, D. Jung, W. H. Lee, W. Kim, T.&#8209;S. Kim. DA-TRL: Demonstration-augmented transformer reinforcement learning for long-horizon bimanual tasks by dual-arm robot. <i>IEEE/SICE SII</i>, Ha Long, 2024.</li>
+      </ul>
+
+      <h4>Under review</h4>
+      <ul class="biblio">
+        <li>S. Park, <b>I. Espinoza</b>, G. Kim, J. Y. Kim, K. Lee, T.&#8209;S. Kim. TMAD: Temporal multi-agent distillation for bimanual long-horizon manipulation. 2026.</li>
+      </ul>
+
+      <h4>Domestic conference papers (KICS, Korea)</h4>
+      <ul class="biblio">
+        <li>D. Jung, J.&#8209;H. Oh, <b>I. Espinoza Jaramillo</b>, Y.&#8209;H. Choi, K. Lee, T.&#8209;S. Kim. Daily human activity recognition using joint angle feature based LSTM. KICS Fall Conference, 2024.</li>
+        <li>Y.&#8209;H. Choi, <b>I. Espinoza Jaramillo</b>, J.&#8209;H. Oh, D. Jung, K. Lee, T.&#8209;S. Kim. Robot-human handover of objects via human hand pose recognition. KICS Fall Conference, 2024.</li>
+        <li>J. H. Lee, H. Jung, J.&#8209;H. Oh, <b>I. Espinoza Jaramillo</b>, S. Kim, D. Jung, T.&#8209;S. Kim. Development of dual-arm robot intelligence for long-horizon medical assistive tasks via collaborative reinforcement learning. KICS Fall Conference, 2023.</li>
+        <li>H. Jung, J. H. Lee, J.&#8209;H. Oh, <b>I. Espinoza Jaramillo</b>, S. Kim, D. Jung, T.&#8209;S. Kim. Dual-arm robot manipulation of long-horizon lifecare tasks via multi-agent VAMIX-DAPG reinforcement learning. KICS Fall Conference, 2023.</li>
+        <li>J.&#8209;H. Oh, J. G. Jeong, <b>I. Espinoza Jaramillo</b>, H. Jung, J. H. Lee, C. Chola, T.&#8209;S. Kim. Autonomous object grasping with an anthropomorphic robot hand via demonstration augmented deep reinforcement learning. KICS Fall Conference, 2022.</li>
+        <li>J. G. Jeong, H. Jung, J. H. Lee, J.&#8209;H. Oh, <b>I. Espinoza Jaramillo</b>, C. Chola, T.&#8209;S. Kim. Solving kitchen long horizon tasks with an anthropomorphic robot hand via sub-goal network-based deep reinforcement learning. KICS Fall Conference, 2022.</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- Experience -->
+  <section class="section wrap" id="experience">
+    <div class="section-head"><h2>Experience &amp; education</h2></div>
+    <div class="cols">
+      <div>
+        <h3 class="subhead">Experience</h3>
+        <ol class="timeline">
+          <li>
+            <p class="t-when">Mar 2022 – present</p>
+            <p class="t-what">Graduate Researcher (Ph.D.), Robot Learning</p>
+            <p class="t-where">Kyung Hee University, Yongin, South Korea · Advisor: Prof. Tae-Seong Kim</p>
+            <p class="t-desc">Designed and built the Real2Sim2Real system of my dissertation: teleoperation and retargeting, Isaac Lab digital twins, and ROS&nbsp;2 deployment on two robot configurations. Co-developed the TC-TRL policy (co-first author) and the TMAD distillation (second author).</p>
+          </li>
+          <li>
+            <p class="t-when">May 2021 – Feb 2022</p>
+            <p class="t-what">Research Assistant, Mobile Robotics</p>
+            <p class="t-where">Universidad de las Fuerzas Armadas (ESPE), Quito, Ecuador</p>
+            <p class="t-desc">ROS software stack (Python, C++) for a social-navigation and telepresence robot; BLE indoor localization.</p>
+          </li>
+          <li>
+            <p class="t-when">Nov 2020 – May 2021</p>
+            <p class="t-what">Project Development Assistant, Industrial Automation</p>
+            <p class="t-where">Robotron S.A., Quito, Ecuador</p>
+            <p class="t-desc">LiDAR and QR-marker forklift navigation and pallet tracking for a sub-zero warehouse; C++ and Python bridges between Siemens PLCs and a Microsoft Azure database; on-site installation.</p>
+          </li>
+          <li>
+            <p class="t-when">Aug 2020 – Oct 2020</p>
+            <p class="t-what">Electrical Design Intern</p>
+            <p class="t-where">SEIUS S.A., Quito, Ecuador (remote)</p>
+          </li>
+        </ol>
+      </div>
+      <div>
+        <h3 class="subhead">Education</h3>
+        <ol class="timeline">
+          <li>
+            <p class="t-when">Mar 2022 – Feb 2027 (expected)</p>
+            <p class="t-what">Ph.D. (integrated M.S.–Ph.D.), Electronics and Information Convergence Engineering</p>
+            <p class="t-where">Kyung Hee University, South Korea · major: Biomedical Engineering · GPA 4.27/4.30</p>
+          </li>
+          <li>
+            <p class="t-when">Sep 2015 – Feb 2021</p>
+            <p class="t-what">B.Sc., Electronics, Automation and Control Engineering</p>
+            <p class="t-where">Universidad de las Fuerzas Armadas (ESPE), Ecuador · GPA 17.15/20</p>
+          </li>
+        </ol>
+
+        <h3 class="subhead">Honors</h3>
+        <ul class="plain">
+          <li>President's Scholarship, Kyung Hee University, all six semesters (2022–2024)</li>
+          <li>BK21 FOUR Fellowship (2025)</li>
+          <li>BK21 Plus Scholarship (2023–2024)</li>
+          <li>Journal Publication Scholarship, Kyung Hee University (2023)</li>
+        </ul>
+
+        <h3 class="subhead">Skills</h3>
+        <dl class="skills">
+          <dt>Robot learning</dt><dd>RL (PPO, multi-agent), imitation learning, ACT and SmolVLA, teacher-student distillation, sim-to-real, domain randomization</dd>
+          <dt>Perception</dt><dd>FoundationPose, YOLO-World, SAM&nbsp;2, RGB visuomotor policies, RealSense</dd>
+          <dt>Simulation</dt><dd>Isaac Lab, Isaac Sim, Isaac Gym, MuJoCo</dd>
+          <dt>Software</dt><dd>Python, C++, PyTorch, CUDA, ROS&nbsp;2, Docker, Linux, Git</dd>
+          <dt>Hardware</dt><dd>UR3 and UR3e, Allegro Hand V4, Manus gloves, VIVE trackers, Siemens PLCs</dd>
+          <dt>Languages</dt><dd>Spanish (native), English (fluent), Korean (basic)</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section wrap" id="contact">
+    <div class="contact">
+      <div>
+        <h2>Contact</h2>
+        <p>Based in Gyeonggi-do, South Korea, and open to research scientist and research engineer roles in robot learning, in Korea or abroad.</p>
+      </div>
+      <dl class="contact-mails">
+        <dt>Personal</dt><dd><a href="mailto:inespinozarir10@gmail.com">inespinozarir10@gmail.com</a></dd>
+        <dt>Lab</dt><dd><a href="mailto:inespinoza24@khu.ac.kr">inespinoza24@khu.ac.kr</a></dd>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p>© 2026 Ismael Espinoza Jaramillo · Last updated October 2026</p>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged figure" hidden>
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+  <img alt="" id="lightboxImg">
+</div>
+
+<script src="script.js?v=20261016c"></script>
+</body>
+</html>
