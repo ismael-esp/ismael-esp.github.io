@@ -121,19 +121,29 @@ code { font-size: 0.88em; background: var(--bg-soft); padding: 1px 5px; border-r
 /* ---------- Intro ---------- */
 .intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 40px;
   align-items: start;
-  padding-top: 56px;
+  padding-top: 48px;
   padding-bottom: 40px;
+}
+.intro-head { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
+.avatar {
+  width: 72px;
+  height: 72px;
+  flex: none;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--line);
 }
 .intro h1 {
   font-size: clamp(1.9rem, 4vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
 }
-.role { color: var(--muted); font-size: 1rem; margin-bottom: 18px; }
+.role { color: var(--muted); font-size: 1rem; margin: 0; }
+.logistics { color: var(--ink); font-size: 0.95rem; font-weight: 500; margin-bottom: 16px; }
 .statement {
   font-size: 1.22rem;
   line-height: 1.45;
@@ -167,14 +177,24 @@ a.quiet:hover { color: var(--accent); text-decoration: none; border-color: var(-
 }
 .links a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); text-decoration: none; }
 
-.intro-photo { margin: 6px 0 0; }
-.intro-photo img {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 1px solid var(--line);
+.proof { list-style: none; padding: 0; margin: 0 0 4px; max-width: var(--measure); }
+.proof li {
+  position: relative;
+  padding: 3px 0 3px 18px;
+  font-size: 0.97rem;
 }
+.proof li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.8em;
+  width: 8px; height: 8px;
+  border-radius: 2px;
+  background: var(--real);
+}
+.links a.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.links a.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: #fff; }
+.intro-more { color: var(--muted); font-size: 0.93rem; margin: 18px 0 0; }
+.intro-clip { margin: 4px 0 0; }
 
 /* ---------- Sections ---------- */
 .section { padding-top: 44px; padding-bottom: 44px; border-top: 1px solid var(--line); }
@@ -209,7 +229,7 @@ a.quiet:hover { color: var(--accent); text-decoration: none; border-color: var(-
 /* ---------- Video reel ---------- */
 .reel {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 .clip { margin: 0; }
@@ -363,6 +383,7 @@ a.quiet:hover { color: var(--accent); text-decoration: none; border-color: var(-
 .pub:first-child { padding-top: 4px; }
 .pub-thumb {
   width: 200px;
+  height: auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   border-radius: 8px;
@@ -526,21 +547,12 @@ a.quiet:hover { color: var(--accent); text-decoration: none; border-color: var(-
   .no-js .topbar-inner { height: auto; flex-wrap: wrap; padding-top: 12px; }
   .no-js .topbar { position: static; }
 
+  .intro { grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; }
   .row, .row.reverse { grid-template-columns: 1fr; gap: 18px; }
   .row.reverse .row-media { order: 0; }
   .split { grid-template-columns: 1fr; }
   .cols { grid-template-columns: 1fr; gap: 8px; }
   .repos { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 760px) {
-  .intro { grid-template-columns: 1fr; gap: 20px; padding-top: 32px; }
-  .intro-photo { order: -1; }
-  .intro-photo img { width: 120px; height: 120px; }
-  .reel, .pair { grid-template-columns: 1fr; }
-  .pub { grid-template-columns: 1fr; gap: 10px; }
-  .pub-thumb { width: 100%; max-width: 420px; }
-  .contact { flex-direction: column; align-items: flex-start; }
 
   .results { font-size: 0.84rem; }
   .results th, .results td { padding: 7px 6px; white-space: normal; }
@@ -549,8 +561,17 @@ a.quiet:hover { color: var(--accent); text-decoration: none; border-color: var(-
   .results .pct::before { content: none; }
 }
 
+@media (max-width: 760px) {
+  .intro { grid-template-columns: 1fr; gap: 20px; padding-top: 28px; }
+  .avatar { width: 56px; height: 56px; }
+  .reel, .pair { grid-template-columns: 1fr; }
+  .pub { grid-template-columns: 1fr; gap: 10px; }
+  .pub-thumb { width: 100%; max-width: 420px; }
+  .contact { flex-direction: column; align-items: flex-start; }
+}
+
 @media (max-width: 480px) {
-  .wrap { padding: 0 16px; }
+  .wrap { padding-left: 16px; padding-right: 16px; }
   .news li { grid-template-columns: 1fr; gap: 0; }
   .skills { grid-template-columns: 1fr; gap: 0; }
   .skills dd { margin-bottom: 8px; }

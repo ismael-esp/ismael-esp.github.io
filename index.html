@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261016c">
+<link rel="stylesheet" href="style.css?v=20261017a">
 </head>
 <body>
 
@@ -50,27 +50,40 @@
   <!-- Intro -->
   <section class="intro wrap" id="top">
     <div class="intro-text">
-      <h1>Ismael Espinoza Jaramillo</h1>
-      <p class="role">Robot learning researcher · Ph.D. candidate, Kyung Hee University (degree February 2027)</p>
-      <p class="statement">I make robot policies trained in simulation work on real robots.</p>
-      <p>I build the whole path from data to hardware: teleoperation rigs that record demonstrations (data gloves,
-      VR hand tracking), digital twins in Isaac Lab calibrated against the real robot, transformer policies trained
-      with imitation and reinforcement learning, and <strong>ROS&nbsp;2 deployment</strong> with 6D object tracking
-      or RGB-only vision. My policies control two arms and two dexterous hands, 44 joints, in two configurations of the same
-      robot, table-mounted and upper-humanoid, with no training on real-robot data.</p>
-      <p>Before robot learning I worked in industrial automation in Ecuador (PLCs, LiDAR navigation). I am looking for
-      research scientist and research engineer roles in robot learning, in Korea or abroad.</p>
+      <div class="intro-head">
+        <img class="avatar" src="assets/media/profile_ismael.jpg" alt="Portrait of Ismael Espinoza Jaramillo" width="640" height="640">
+        <div>
+          <h1>Ismael Espinoza Jaramillo</h1>
+          <p class="role">Robot learning researcher · Ph.D. candidate, Kyung Hee University (degree February 2027)</p>
+        </div>
+      </div>
+      <p class="logistics">Available from March 2027 · Gyeonggi-do, South Korea · open to relocation</p>
+      <p class="statement">I train policies for a 44-DoF robot with two arms and two dexterous hands in simulation
+      and run them on the real robot, with no real-robot training data.</p>
+      <ul class="proof" aria-label="Key results">
+        <li><strong>4 long-horizon tasks on the real robot:</strong> 18 to 30 of 35 trials each (Bimanual Sweeping 30/35)</li>
+        <li><strong>72 to 84% real-robot success from two RGB cameras</strong>, no pose estimator</li>
+        <li><strong>IEEE RA-L 2024</strong> co-first author · Korean patent 10-2943203 granted</li>
+      </ul>
       <ul class="links" aria-label="Links">
         <li><a href="mailto:inespinozarir10@gmail.com">Email</a></li>
-        <li><a href="mailto:inespinoza24@khu.ac.kr">Lab email</a></li>
+        <li><a href="assets/Espinoza_Ismael_CV.pdf" class="primary">CV (PDF)</a></li>
         <li><a href="https://scholar.google.com/citations?user=3S9BoVAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
         <li><a href="https://github.com/ismael-esp" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="assets/Espinoza_Ismael_CV.pdf">CV</a></li>
-        <!-- LinkedIn: add an <li> here with the profile URL once it exists. -->
+        <!-- LinkedIn: add an <li> here once the profile text matches the CV (linkedin.com/in/ismael-e-1629bb229). -->
       </ul>
+      <p class="intro-more">The whole path from data to hardware: glove and VR teleoperation, digital twins in Isaac Lab,
+      transformer policies trained with imitation and reinforcement learning, and ROS&nbsp;2 deployment with 6D object
+      tracking or RGB-only vision. Before robot learning: industrial automation in Ecuador (PLCs, LiDAR navigation).</p>
     </div>
-    <figure class="intro-photo">
-      <img src="assets/media/profile_ismael.jpg" alt="Portrait of Ismael Espinoza Jaramillo" width="640" height="640">
+    <figure class="clip intro-clip">
+      <video class="autoplay" controls muted loop playsinline preload="none" poster="assets/media/real_sweeping_h4.jpg" aria-label="Real robot sweeping debris into a dustpan with a brush held in one hand and the dustpan in the other">
+        <source src="assets/media/real_sweeping_h4.mp4" type="video/mp4">
+      </video>
+      <figcaption>
+        <span class="clip-title">Bimanual Sweeping</span>
+        <span class="clip-meta"><span class="tag tag-real">Real robot</span> Direct transfer · 30/35 successes · 2× speed</span>
+      </figcaption>
     </figure>
   </section>
 
@@ -81,15 +94,6 @@
       <p class="section-sub">Each policy was trained only in the digital twin and run on the robot without real-robot training data.</p>
     </div>
     <div class="reel">
-      <figure class="clip">
-        <video class="autoplay" controls muted loop playsinline preload="none" poster="assets/media/real_sweeping_h4.jpg" aria-label="Real robot sweeping debris into a dustpan with a brush held in one hand and the dustpan in the other">
-          <source src="assets/media/real_sweeping_h4.mp4" type="video/mp4">
-        </video>
-        <figcaption>
-          <span class="clip-title">Bimanual Sweeping</span>
-          <span class="clip-meta"><span class="tag tag-real">Real robot</span> Direct transfer · 30/35 successes · 2× speed</span>
-        </figcaption>
-      </figure>
       <figure class="clip">
         <video class="autoplay" controls muted loop playsinline preload="none" poster="assets/media/real_cup_handover_h3.jpg" aria-label="Real robot flipping a cup, handing it from one hand to the other and placing it on a tray">
           <source src="assets/media/real_cup_handover_h3.mp4" type="video/mp4">
@@ -283,7 +287,7 @@
         </figure>
         <div class="table-wrap">
           <table class="results">
-            <caption>Distilled transfer: success on the real robot, upper-humanoid (mean of 3 runs × 25 trials)</caption>
+            <caption>Distilled transfer: success on the real robot, upper-humanoid (mean of three evaluation runs per task)</caption>
             <thead>
               <tr><th scope="col">Task</th><th scope="col" class="num">RGB student (TMAD)</th><th scope="col" class="num">Single-agent student</th></tr>
             </thead>
@@ -294,7 +298,7 @@
               <tr><th scope="row">Bimanual Sweeping</th><td class="num"><strong>81.2%</strong></td><td class="num">75.9%</td></tr>
             </tbody>
           </table>
-          <p class="note">Source: dissertation, Chapter 5. The single-agent student (DextrAH-RGB style) has the same encoder and training but no temporal multi-agent core. The TMAD paper under review (second author) reports the first two tasks.</p>
+          <p class="note">Source: dissertation, Chapter 5. The single-agent student (DextrAH-RGB style) has the same encoder and training but no temporal multi-agent core. The TMAD paper under review (second author) reports the first two tasks, each over three runs of 25 trials.</p>
         </div>
       </div>
     </article>
@@ -555,6 +559,8 @@
       <dl class="contact-mails">
         <dt>Personal</dt><dd><a href="mailto:inespinozarir10@gmail.com">inespinozarir10@gmail.com</a></dd>
         <dt>Lab</dt><dd><a href="mailto:inespinoza24@khu.ac.kr">inespinoza24@khu.ac.kr</a></dd>
+        <dt>CV</dt><dd><a href="assets/Espinoza_Ismael_CV.pdf">Espinoza_Ismael_CV.pdf</a></dd>
+        <dt>Scholar</dt><dd><a href="https://scholar.google.com/citations?user=3S9BoVAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar profile</a></dd>
       </dl>
     </div>
   </section>
